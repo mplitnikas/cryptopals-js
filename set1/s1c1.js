@@ -1,6 +1,6 @@
-import ByteBuffer from 'bytebuffer';
+import * as utils from '../common/utils';
 
 export const hexToB64 = (inputString) => {
-  const bb = ByteBuffer.fromHex(inputString);
-  return bb.toBase64();
+  const bytes = utils.hexToByteArray(inputString);
+  return utils.byteArrayToB64(bytes);
 }
